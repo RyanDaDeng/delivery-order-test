@@ -3,9 +3,9 @@
 namespace TimeHunter\DeliveryOrderTest\Tests;
 
 use PHPUnit\Framework\TestCase;
-use TimeHunter\DeliveryOrderTest\DeliveryOrderModule\DeliveryOrderProcessors\EnterpriseDeliveryProcessor;
 use TimeHunter\DeliveryOrderTest\MarketingModule\Interfaces\MarketingServiceInterface;
 use TimeHunter\DeliveryOrderTest\ThirdPartyModule\Interfaces\ThirdPartyApiServiceInterface;
+use TimeHunter\DeliveryOrderTest\DeliveryOrderModule\DeliveryOrderProcessors\EnterpriseDeliveryProcessor;
 
 class EnterpriseDeliveryProcessorTest extends TestCase
 {
@@ -19,19 +19,14 @@ class EnterpriseDeliveryProcessorTest extends TestCase
             ->andReturn(true)
             ->mock();
 
-
         $marketingMock = \Mockery::mock(MarketingServiceInterface::class);
 
         $marketingMock->shouldReceive('process')
             ->mock();
 
-        $service = new EnterpriseDeliveryProcessor($mock,json_decode($json,1),$marketingMock);
-        $this->assertEquals(true,$service->validate());
-
-
+        $service = new EnterpriseDeliveryProcessor($mock, json_decode($json, 1), $marketingMock);
+        $this->assertEquals(true, $service->validate());
     }
-
-
 
     public function testGetEnterpriseDeliveryTypeValidate2()
     {
@@ -48,11 +43,9 @@ class EnterpriseDeliveryProcessorTest extends TestCase
         $marketingMock->shouldReceive('process')
             ->mock();
 
-        $service = new EnterpriseDeliveryProcessor($mock,json_decode($json,1),$marketingMock);
-        $this->assertEquals(false,$service->validate());
+        $service = new EnterpriseDeliveryProcessor($mock, json_decode($json, 1), $marketingMock);
+        $this->assertEquals(false, $service->validate());
     }
-
-
 
     public function testGetEnterpriseDeliveryProcess()
     {
@@ -69,12 +62,8 @@ class EnterpriseDeliveryProcessorTest extends TestCase
         $marketingMock->shouldReceive('process')
             ->mock();
 
+        $service = new EnterpriseDeliveryProcessor($mock, json_decode($json, 1), $marketingMock);
 
-        $service = new EnterpriseDeliveryProcessor($mock,json_decode($json,1),$marketingMock);
-
-        $this->assertEquals(true,$service->process());
+        $this->assertEquals(true, $service->process());
     }
-
-
-
 }

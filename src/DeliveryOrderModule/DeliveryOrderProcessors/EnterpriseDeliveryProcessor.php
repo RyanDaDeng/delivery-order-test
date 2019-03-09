@@ -3,18 +3,16 @@
  * Created by PhpStorm.
  * User: rayndeng
  * Date: 4/3/19
- * Time: 3:21 PM
+ * Time: 3:21 PM.
  */
 
 namespace TimeHunter\DeliveryOrderTest\DeliveryOrderModule\DeliveryOrderProcessors;
-
 
 use TimeHunter\DeliveryOrderTest\MarketingModule\Interfaces\MarketingServiceInterface;
 use TimeHunter\DeliveryOrderTest\ThirdPartyModule\Interfaces\ThirdPartyApiServiceInterface;
 
 class EnterpriseDeliveryProcessor extends AbstractDeliveryOrderProcessor
 {
-
     protected $thirdPartyApiService;
 
     public function __construct(ThirdPartyApiServiceInterface $thirdPartyApiService, $data, MarketingServiceInterface $marketingService)

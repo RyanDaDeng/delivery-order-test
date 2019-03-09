@@ -3,17 +3,16 @@
  * Created by PhpStorm.
  * User: rayndeng
  * Date: 4/3/19
- * Time: 3:39 PM
+ * Time: 3:39 PM.
  */
 
 namespace TimeHunter\DeliveryOrderTest\DeliveryOrderModule\Services;
 
-use TimeHunter\DeliveryOrderTest\DeliveryOrderModule\DeliveryOrderProcessors\AbstractDeliveryOrderProcessor;
 use TimeHunter\DeliveryOrderTest\DeliveryOrderModule\Factories\DeliveryOrderProcessorFactory;
+use TimeHunter\DeliveryOrderTest\DeliveryOrderModule\DeliveryOrderProcessors\AbstractDeliveryOrderProcessor;
 
 class DeliveryOrderService
 {
-
     /**
      * @var AbstractDeliveryOrderProcessor[]
      */
