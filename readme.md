@@ -46,6 +46,32 @@ The problem can be categorised as the following points:
 
 <img src="https://github.com/RyanDaDeng/delivery-order-test/blob/master/template_method.jpg" width="500" height="300" />
 
+
+ Note:
+ 
+ 1. As mentioned in the question, the EnterpriseDelivery Order needs to be validated with third party api first, if its failed, the logic should no longer continue.
+ In this case, I have a defined steps in the abstract class, e.g. check validation first, then do the logic.
+ 
+ ````php
+ ....
+     public function process()
+     {
+         if ($this->validate()) {
+             $this->before();
+             $this->handle();
+             $this->after();
+ 
+             return true;
+         } else {
+             return false;
+         }
+     }
+....
+ ````
+ 
+ The handle function is an abstract function which will be implemented for all sub-classes. Use this function to define its own workflow.
+ 
+ 
 ## Usage
 
 ````php
