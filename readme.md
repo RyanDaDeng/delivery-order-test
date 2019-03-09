@@ -43,12 +43,17 @@ The problem can be categorised as the following points:
 1. I use Template Method design pattern which is based on inheritance. It allows me modify parts of an algorithm by extending those parts in sub-classes.
 2. I also use factory pattern to determine which type of delivery order object I need to return.
 
+
+<img src="https://github.com/RyanDaDeng/delivery-order-test/blob/master/template_method.jpg" width="500" height="300" />
+
 ## Usage
 
 ````php
  $json = "[{},{},{}...{}]"; // the given sample json data
  $service = new DeliveryOrderService($json);
- $service->processJson()
+ $objects = $service->processJson() // this return a list of different delivery order objects
+ 
+ 
 ````
 
 ## Testing
@@ -56,6 +61,7 @@ The problem can be categorised as the following points:
 I. use PHPUnit
 2. Mocking Interfaces for testing
 3. Pass different json to test if the service returns the correct delivery type
+4. use travis-ci for CI/CD
 
 
 [ico-coverage]: https://coveralls.io/repos/github/RyanDaDeng/delivery-order-test/badge.svg?branch=master&service=github
