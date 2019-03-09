@@ -1,0 +1,27 @@
+<?php
+
+namespace TimeHunter\DeliveryOrderTest\Tests;
+
+use PHPUnit\Framework\TestCase;
+use TimeHunter\DeliveryOrderTest\DeliveryOrderModule\DeliveryOrderProcessors\PersonalDeliveryProcessor;
+use TimeHunter\DeliveryOrderTest\MarketingModule\Interfaces\MarketingServiceInterface;
+
+class PersonalDeliveryProcessorTest extends TestCase
+{
+
+    public function testGetEnterpriseDeliveryProcess()
+    {
+        $json = '{"customer":{"name":"Jack Ripper","address":"822 Anzac Parade, 2035, Maroubra"},"deliveryType":"personalDeliveryExpress","source":"email","weight":2000,"campaign":{"name":"Christmas2018","type":"holiday","ad":"opportunity"}}';
+
+
+        $marketingMock = \Mockery::mock(MarketingServiceInterface::class);
+
+        $marketingMock->shouldReceive('process')
+            ->mock();
+
+        $service = new PersonalDeliveryProcessor(json_decode($json,1),$marketingMock);
+
+        $this->assertEquals(true,$service->process());
+    }
+
+}
