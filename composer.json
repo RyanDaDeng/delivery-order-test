@@ -1,5 +1,5 @@
 {
-    "name": "timehunter/deliveryordertest",
+    "name": "timehunter/delivery-order-test",
     "description": ":description",
     "license": "MIT",
     "authors": [
@@ -9,7 +9,7 @@
             "homepage": "https://ryandeng.com"
         }
     ],
-    "homepage": "https://github.com/timehunter/deliveryordertest",
+    "homepage": "https://github.com/RyanDaDeng/delivery-order-test",
     "keywords": ["Laravel", "DeliveryOrderTest"],
     "require": {
         "illuminate/support": "~5"
