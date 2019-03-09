@@ -1,57 +1,68 @@
 # DeliveryOrderTest
 
-[![Latest Version on Packagist][ico-version]][link-packagist]
-[![Total Downloads][ico-downloads]][link-downloads]
-[![Build Status][ico-travis]][link-travis]
+[![Coverage Status][ico-coverage]][link-coverage]
+[![Build][ico-build]][link-build]
 [![StyleCI][ico-styleci]][link-styleci]
 
-This is where your description should go. Take a look at [contributing.md](contributing.md) to see a to do list.
+
+
+## Description
+
+The solution is written on Laravel framework.
 
 ## Installation
 
-Via Composer
+1. This is a Laravel composer package, you need to have a Laravel installed first.
+2. Via Composer
 
 ``` bash
-$ composer require timehunter/deliveryordertest
+$ composer require timehunter/delivery-order-test
 ```
 
 ## Usage
 
-## Change log
+## Question Analysis
 
-Please see the [changelog](changelog.md) for more information on what has changed recently.
+Potential design patterns can be used for this problem: factory, template method and strategy
+
+The problem can be categorised as the following points:
+
+1. How to create different objects based on dynamic input value? e.g. “enterpriseDelivery” return EnterpriseDelivery object
+ - use Factory pattern which encapsulates the logic of creating objects.
+ 
+2. Different object should contain its own workflow and dependent services.
+ - use Strategy pattern(interface) or template method(inheritance)
+ 
+3. Domain driven design
+ - Basically make the system as module based and each module has its own services. If there are any common interfaces, they can be shared across different module.
+ - From the question mentioned, I can see there are three modules can be found: Delivery Order module, Third party module and Marketing module
+
+
+## My solution
+
+1. I use Template Method design pattern which is based on inheritance. It allows me modify parts of an algorithm by extending those parts in sub-classes.
+2. I also use factory pattern to determine which type of delivery order object I need to return.
+
+## Usage
+
+````php
+ $json = "[{},{},{}...{}]"; // the given sample json data
+ $service = new DeliveryOrderService($json);
+ $service->processJson()
+````
 
 ## Testing
 
-``` bash
-$ composer test
-```
+I. use PHPUnit
+2. Mocking Interfaces for testing
+3. Pass different json to test if the service returns the correct delivery type
 
-## Contributing
 
-Please see [contributing.md](contributing.md) for details and a todolist.
+[ico-coverage]: https://coveralls.io/repos/github/RyanDaDeng/delivery-order-test/badge.svg?branch=master&service=github
+[ico-build]: https://travis-ci.org/RyanDaDeng/delivery-order-test.svg?branch=master
+[ico-styleci]: https://github.styleci.io/repos/174629501/shield
 
-## Security
 
-If you discover any security related issues, please email ryandadeng@gmail.com instead of using the issue tracker.
-
-## Credits
-
-- [Ryan Deng][link-author]
-- [All Contributors][link-contributors]
-
-## License
-
-MIT. Please see the [license file](license.md) for more information.
-
-[ico-version]: https://img.shields.io/packagist/v/timehunter/deliveryordertest.svg?style=flat-square
-[ico-downloads]: https://img.shields.io/packagist/dt/timehunter/deliveryordertest.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/timehunter/deliveryordertest/master.svg?style=flat-square
-[ico-styleci]: https://styleci.io/repos/12345678/shield
-
-[link-packagist]: https://packagist.org/packages/timehunter/deliveryordertest
-[link-downloads]: https://packagist.org/packages/timehunter/deliveryordertest
-[link-travis]: https://travis-ci.org/timehunter/deliveryordertest
-[link-styleci]: https://styleci.io/repos/12345678
-[link-author]: https://github.com/timehunter
-[link-contributors]: ../../contributors
+[link-coverage]: https://coveralls.io/github/RyanDaDeng/delivery-order-test?branch=master
+[link-build]: https://travis-ci.org/RyanDaDeng/delivery-order-test
+[link-styleci]: https://github.styleci.io/repos/174629501
