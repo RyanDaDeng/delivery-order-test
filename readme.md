@@ -95,6 +95,12 @@ The problem can be categorised as the following points:
 3. Pass different json to test if the service returns the correct delivery type
 4. use travis-ci for CI/CD: https://coveralls.io/github/RyanDaDeng/delivery-order-test?branch=master
 
+## Improvements & Relecftions
+1. The package does not use any Laravel feature e.g. service containers, facades. They can be applied by creating service provider to register their dependencies.
+2. API service and marketing service can be singleton.
+3. If any new delivery order type comes in, we just need to create a new sub-class which extends Abstract base class.
+4. Strategy pattern can be used instead of inheritance if the interface and design are finalised.
+
 
 [ico-coverage]: https://coveralls.io/repos/github/RyanDaDeng/delivery-order-test/badge.svg?branch=master&service=github
 [ico-build]: https://travis-ci.org/RyanDaDeng/delivery-order-test.svg?branch=master
