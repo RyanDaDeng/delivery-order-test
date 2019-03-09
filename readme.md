@@ -19,8 +19,6 @@ The solution is written on Laravel framework.
 $ composer require timehunter/delivery-order-test
 ```
 
-## Usage
-
 ## Question Analysis
 
 Potential design patterns can be used for this problem: factory, template method and strategy
