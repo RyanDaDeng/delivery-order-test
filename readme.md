@@ -84,7 +84,7 @@ The problem can be categorised as the following points:
 
 ## Testing
 
-I. use PHPUnit
+1. use PHPUnit
 2. Mocking Interfaces for testing
 3. Pass different json to test if the service returns the correct delivery type
 4. use travis-ci for CI/CD
