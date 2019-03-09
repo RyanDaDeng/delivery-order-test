@@ -40,6 +40,12 @@ The problem can be categorised as the following points:
 
 ## My solution
 
+#### Assumptions
+1. Marketing service and Third Party api service have been fully tested.
+
+
+#### Designs
+
 1. I use Template Method design pattern which is based on inheritance. It allows me modify parts of an algorithm by extending those parts in sub-classes.
 2. I also use factory pattern to determine which type of delivery order object I need to return.
 
@@ -87,7 +93,7 @@ The problem can be categorised as the following points:
 1. use PHPUnit
 2. Mocking Interfaces for testing
 3. Pass different json to test if the service returns the correct delivery type
-4. use travis-ci for CI/CD
+4. use travis-ci for CI/CD: https://coveralls.io/github/RyanDaDeng/delivery-order-test?branch=master
 
 
 [ico-coverage]: https://coveralls.io/repos/github/RyanDaDeng/delivery-order-test/badge.svg?branch=master&service=github
