@@ -44,7 +44,7 @@ class EnterpriseDeliveryProcessorTest extends TestCase
             ->mock();
 
         $service = new EnterpriseDeliveryProcessor($mock, json_decode($json, 1), $marketingMock);
-        $this->assertEquals(false, $service->validate());
+        $this->assertEquals(false, $service->process());
     }
 
     public function testGetEnterpriseDeliveryProcess()
