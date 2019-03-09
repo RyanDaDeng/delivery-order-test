@@ -3,17 +3,17 @@
  * Created by PhpStorm.
  * User: rayndeng
  * Date: 4/3/19
- * Time: 4:32 PM
+ * Time: 4:32 PM.
  */
 
 namespace TimeHunter\DeliveryOrderTest\DeliveryOrderModule\Factories;
 
-use TimeHunter\DeliveryOrderTest\DeliveryOrderModule\DeliveryOrderProcessors\AbstractDeliveryOrderProcessor;
-use TimeHunter\DeliveryOrderTest\DeliveryOrderModule\DeliveryOrderProcessors\EnterpriseDeliveryProcessor;
-use TimeHunter\DeliveryOrderTest\DeliveryOrderModule\DeliveryOrderProcessors\PersonalDeliveryExpressProcessor;
-use TimeHunter\DeliveryOrderTest\DeliveryOrderModule\DeliveryOrderProcessors\PersonalDeliveryProcessor;
 use TimeHunter\DeliveryOrderTest\MarketingModule\Services\MarketingService;
 use TimeHunter\DeliveryOrderTest\ThirdPartyModule\Services\ThirdPartyApiService;
+use TimeHunter\DeliveryOrderTest\DeliveryOrderModule\DeliveryOrderProcessors\PersonalDeliveryProcessor;
+use TimeHunter\DeliveryOrderTest\DeliveryOrderModule\DeliveryOrderProcessors\EnterpriseDeliveryProcessor;
+use TimeHunter\DeliveryOrderTest\DeliveryOrderModule\DeliveryOrderProcessors\AbstractDeliveryOrderProcessor;
+use TimeHunter\DeliveryOrderTest\DeliveryOrderModule\DeliveryOrderProcessors\PersonalDeliveryExpressProcessor;
 
 class DeliveryOrderProcessorFactory
 {
@@ -28,6 +28,7 @@ class DeliveryOrderProcessorFactory
     public static function makeByJson($json)
     {
         $data = json_decode($json, 1);
+
         return self::create($data);
     }
 
@@ -39,7 +40,6 @@ class DeliveryOrderProcessorFactory
     {
         return self::create($data);
     }
-
 
     /**
      * @param $data
@@ -61,7 +61,7 @@ class DeliveryOrderProcessorFactory
                 $object = new PersonalDeliveryExpressProcessor($data, $marketingService);
                 break;
         }
+
         return $object;
     }
-
 }

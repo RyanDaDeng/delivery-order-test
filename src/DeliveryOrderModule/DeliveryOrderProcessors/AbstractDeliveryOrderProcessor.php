@@ -3,11 +3,10 @@
  * Created by PhpStorm.
  * User: rayndeng
  * Date: 4/3/19
- * Time: 3:21 PM
+ * Time: 3:21 PM.
  */
 
 namespace TimeHunter\DeliveryOrderTest\DeliveryOrderModule\DeliveryOrderProcessors;
-
 
 use TimeHunter\DeliveryOrderTest\MarketingModule\Interfaces\MarketingServiceInterface;
 
@@ -28,15 +27,14 @@ abstract class AbstractDeliveryOrderProcessor
     }
 
     /**
-     * Pre-logic before processing the handler
+     * Pre-logic before processing the handler.
      */
     public function before()
     {
-        return;
     }
 
     /**
-     * Check if the source from campaign
+     * Check if the source from campaign.
      * @return bool
      */
     public function isFromCampaign()
@@ -45,7 +43,7 @@ abstract class AbstractDeliveryOrderProcessor
     }
 
     /**
-     * Logic after processed the handler
+     * Logic after processed the handler.
      */
     public function after()
     {
@@ -63,6 +61,7 @@ abstract class AbstractDeliveryOrderProcessor
             $this->before();
             $this->handle();
             $this->after();
+
             return true;
         } else {
             return false;
@@ -97,7 +96,6 @@ abstract class AbstractDeliveryOrderProcessor
      * @return mixed
      */
     abstract protected function handle();
-
 
     /**
      * @return string
