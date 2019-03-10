@@ -96,7 +96,7 @@ The problem can be categorised as the following points:
 ## Improvements & Relecftions
 1. The package does not use Laravel feature e.g. service containers, facades. They can be applied by creating service provider to register their dependencies.
 2. API service and marketing service can be singleton.
-3. If any new delivery order type comes in, we just need to create a new sub-class which extends Abstract base class.
+3. If any new delivery order type comes in, we just need to create a new sub-class which extends Abstract base class without touching source code (open for extension).
 4. Strategy pattern can be used instead of inheritance if the interface and design are finalised.
 5. Exception handler
 
