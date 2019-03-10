@@ -98,7 +98,7 @@ The problem can be categorised as the following points:
 2. API service and marketing service can be singleton.
 3. If any new delivery order type comes in, we just need to create a new sub-class which extends Abstract base class without touching source code (open for extension).
 4. Strategy pattern can be used instead of inheritance if the interface and design are finalised.
-5. Exception handler
+5. Exception handler can be implemented on the top of abstract class.
 
 [ico-coverage]: https://coveralls.io/repos/github/RyanDaDeng/delivery-order-test/badge.svg?branch=master&service=github
 [ico-build]: https://travis-ci.org/RyanDaDeng/delivery-order-test.svg?branch=master
