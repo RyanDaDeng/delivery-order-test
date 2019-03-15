@@ -3,18 +3,16 @@
  * Created by PhpStorm.
  * User: rayndeng
  * Date: 15/3/19
- * Time: 10:56 AM
+ * Time: 10:56 AM.
  */
 
 namespace TimeHunter\DeliveryOrderTest\DeliveryOrderModule\Strategy;
 
-
-use TimeHunter\DeliveryOrderTest\DeliveryOrderModule\Strategy\Interfaces\ProcessorInterface;
 use TimeHunter\DeliveryOrderTest\MarketingModule\Interfaces\MarketingServiceInterface;
+use TimeHunter\DeliveryOrderTest\DeliveryOrderModule\Strategy\Interfaces\ProcessorInterface;
 
 class DeliveryService
 {
-
     private $processor;
     private $marketingService;
 
@@ -23,7 +21,6 @@ class DeliveryService
         $this->processor = $processor;
         $this->marketingService = $marketingService;
     }
-
 
     /**
      * @return bool
@@ -56,7 +53,6 @@ class DeliveryService
     {
         return $this->defaultValidator() && $this->processor->customValidation();
     }
-
 
     /**
      * Check if the source from campaign.

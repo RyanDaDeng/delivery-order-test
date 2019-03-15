@@ -10,9 +10,8 @@ namespace TimeHunter\DeliveryOrderTest\Strategy\Processors;
 
 use TimeHunter\DeliveryOrderTest\DeliveryOrderModule\Strategy\Interfaces\ProcessorInterface;
 
-class PersonalDeliveryExpressProcessor  implements ProcessorInterface
+class PersonalDeliveryExpressProcessor implements ProcessorInterface
 {
-
     public function before()
     {
         // TODO: Implement before() method.
