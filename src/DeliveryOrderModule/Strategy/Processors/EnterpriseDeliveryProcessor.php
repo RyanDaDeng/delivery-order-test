@@ -8,8 +8,8 @@
 
 namespace TimeHunter\DeliveryOrderTest\Strategy\Processors;
 
-use TimeHunter\DeliveryOrderTest\DeliveryOrderModule\Strategy\Interfaces\ProcessorInterface;
 use TimeHunter\DeliveryOrderTest\ThirdPartyModule\Services\ThirdPartyApiService;
+use TimeHunter\DeliveryOrderTest\DeliveryOrderModule\Strategy\Interfaces\ProcessorInterface;
 
 class EnterpriseDeliveryProcessor implements ProcessorInterface
 {

@@ -12,7 +12,6 @@ use TimeHunter\DeliveryOrderTest\DeliveryOrderModule\Strategy\Interfaces\Process
 
 class PersonalDeliveryProcessor implements ProcessorInterface
 {
-
     public function before()
     {
         // TODO: Implement before() method.
