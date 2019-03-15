@@ -16,7 +16,9 @@
     </testsuites>
     <filter>
         <whitelist>
-            <directory>src/DeliveryOrderModule/</directory>
+            <directory>src/DeliveryOrderModule/DeliveryOrderProcessors</directory>
+            <directory>src/DeliveryOrderModule/Factories</directory>
+            <directory>src/DeliveryOrderModule/Services</directory>
         </whitelist>
     </filter>
     <logging>
