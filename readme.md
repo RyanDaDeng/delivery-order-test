@@ -10,7 +10,7 @@ I just quickly added a new approach by using Strategy pattern (composition) unde
 
 Note: I haven't added test for Strategy pattern yet. Honestly, I still prefer Template method, all the duplicate code put into super class so that all subclass share those code. And the requirement clearly states each of delivery order has its own workflow which is a perfect usage to define steps in super class (AbstractDeliveryOrderProcessor)
 
-(Strategy pattern is just a bonus showcase...)
+(Strategy pattern is just a bonus showcase and it doesn't have test etc....)
 
 ## Description
 
